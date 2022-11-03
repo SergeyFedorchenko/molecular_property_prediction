@@ -13,4 +13,4 @@ Pretraining by learning the regularities of the node/edge attributes distributed
 
 ### Results
 
-See exploration.ipynb
+See exploration.ipynb or https://nbviewer.org/github/SergeyFedorchenko/molecular_property_prediction/blob/main/exploration.ipynb
