@@ -1,20 +1,7 @@
-import os
-
-from torchdrug import data, utils
-from torchdrug.core import Registry as R
-from torchdrug import core, models, tasks, datasets
-import torch
-from torch import nn, optim
-from collections import defaultdict
-import numpy as np
-
-from torch.utils import data as torch_data
-
-import logging
-
+from torchdrug import core, models, tasks
+from torch import optim
 from graph_conv_utils import HIV_mols
-
-
+import json
 
 dataset = HIV_mols('data/HIV.csv', atom_feature="pretrain", bond_feature="pretrain")
 

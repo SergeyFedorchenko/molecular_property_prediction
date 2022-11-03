@@ -18,11 +18,10 @@ import json
 @utils.copy_args(data.MoleculeDataset.load_csv, ignore=("smiles_field", "target_fields"))
 class HIV_mols(data.MoleculeDataset):
     """
-    Qualitative data of drugs approved by the FDA and those that have failed clinical
-    trials for toxicity reasons.
+    Experimentally measured abilities to inhibit HIV replication.
     Statistics:
-        - #Molecule: 1,478
-        - #Classification task: 2
+        - #Molecule: 41,127
+        - #Classification task: 1
     Parameters:
         path (str): path to store the dataset
         verbose (int, optional): output verbose level
@@ -51,7 +50,7 @@ class HIV_mols(data.MoleculeDataset):
 
 
 
-if __name__ == main:
+if __name__ == 'main':
     dataset = HIV_mols('data/HIV.csv', atom_feature="pretrain", bond_feature="pretrain")
 
     train_set, valid_set, test_set = dataset.split()
@@ -72,12 +71,6 @@ if __name__ == main:
     solver.evaluate("valid")
     solver.evaluate("test")
 
-
-
-    #   solver.save("HIV_"+str(i)+".pth")
-
     with open("HIV_gin_pretrain.json", "w") as fout:
         json.dump(solver.config_dict(), fout)
     solver.save("HIV_gin_pretrain.pth")
-
-        
