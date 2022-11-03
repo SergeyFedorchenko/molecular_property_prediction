@@ -1,8 +1,4 @@
-# molecular_property_prediction
-
 # Molecular Property Prediction
-
-Project
 
 ### Random Forest
 Molecular features were constructed with RDKit descriptors and fingerprints. Then cross-validated hyperparameter searches were applied.
